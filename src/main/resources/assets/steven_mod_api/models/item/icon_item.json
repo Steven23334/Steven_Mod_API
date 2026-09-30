@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "steven_mod_api:item/icon_item"
+  }
+}
