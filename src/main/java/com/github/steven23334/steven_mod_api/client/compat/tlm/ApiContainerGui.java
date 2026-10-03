@@ -12,8 +12,11 @@ import java.util.List;
 
 public class ApiContainerGui extends AbstractMaidContainerGui<ApiContainer> {
 
+    private static final String KEY_TITLE = "gui.steven_mod_api.maid_screen_title";
+    private static final String KEY_ID_FORMAT = "gui.steven_mod_api.id_format";
+
     public ApiContainerGui(ApiContainer menu, Inventory inventory, Component title) {
-        super(menu, inventory, Component.literal("Steven的女仆界面"));
+        super(menu, inventory, Component.translatable(KEY_TITLE));
     }
 
     @Override
@@ -24,7 +27,7 @@ public class ApiContainerGui extends AbstractMaidContainerGui<ApiContainer> {
     @Override
     protected void renderAddition(GuiGraphics graphics, int mouseX, int mouseY, float partialTicks) {
         // 标题
-        graphics.drawCenteredString(font, Component.literal("Steven的女仆界面"),
+        graphics.drawCenteredString(font, Component.translatable(KEY_TITLE),
                 leftPos + 164, topPos + 36, 0xFF404040);
 
         // 内容区：只显示第一个 contributor 的 ID
@@ -33,7 +36,7 @@ public class ApiContainerGui extends AbstractMaidContainerGui<ApiContainer> {
             return;
         }
         ApiScreenContributor current = contributors.getFirst();
-        graphics.drawString(font, "ID: " + current.id(),
+        graphics.drawString(font, Component.translatable(KEY_ID_FORMAT, current.id()),
                 leftPos + 90, topPos + 50, 0xFF404040, false);
     }
 }

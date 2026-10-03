@@ -1,4 +1,13 @@
 {
   "item.steven_mod_api.icon_item": "图标物品",
-  "itemGroup.steven_mod_api.steven_tab": "Steven的物品"
+  "itemGroup.steven_mod_api.steven_tab": "Steven的物品",
+
+  "gui.steven_mod_api.maid_screen_title": "Steven的女仆界面",
+  "gui.steven_mod_api.id_format": "ID: %s",
+  "gui.steven_mod_api.main_screen": "Steven的女仆界面",
+
+  "gui.steven_mod_api.api_tab.title": "Steven的女仆界面",
+  "gui.steven_mod_api.api_tab.description": "打开Steven的女仆界面",
+
+  "container.steven_mod_api.api": "API"
 }

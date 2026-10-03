@@ -8,6 +8,9 @@ import net.minecraft.network.chat.Component;
 import java.util.function.Supplier;
 
 public interface ApiScreenContributor {
+
+    String KEY_ID_FORMAT = "gui.steven_mod_api.id_format";
+
     String id();
     Component displayName();
     Supplier<Screen> screenFactory();
@@ -20,6 +23,7 @@ public interface ApiScreenContributor {
                                int x, int y, int width, int height,
                                int mouseX, int mouseY) {
         graphics.drawString(font, displayName(), x, y, 0xFFF0E2C7, false);
-        graphics.drawString(font, "ID: " + id(), x, y + 16, 0xFF858585, false);
+        graphics.drawString(font, Component.translatable(KEY_ID_FORMAT, id()),
+                x, y + 16, 0xFF858585, false);
     }
 }

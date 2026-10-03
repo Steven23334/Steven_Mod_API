@@ -11,6 +11,8 @@ import net.minecraft.world.item.ItemStack;
 
 public class ApiContainer extends AbstractMaidContainer {
 
+    public static final String KEY_CONTAINER_TITLE = "container.steven_mod_api.api";
+
     public ApiContainer(int id, Inventory inventory, int entityId) {
         super(ModMenus.API_CONTAINER.get(), id, inventory, entityId);
     }
@@ -19,7 +21,7 @@ public class ApiContainer extends AbstractMaidContainer {
         return new MenuProvider() {
             @Override
             public Component getDisplayName() {
-                return Component.literal("API");
+                return Component.translatable(KEY_CONTAINER_TITLE);
             }
 
             @Override

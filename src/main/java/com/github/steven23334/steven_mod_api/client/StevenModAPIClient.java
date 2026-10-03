@@ -18,6 +18,8 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 public final class StevenModAPIClient {
     private StevenModAPIClient() {}
 
+    private static final String KEY_MAIN_SCREEN = "gui.steven_mod_api.main_screen";
+
     @SubscribeEvent
     public static void onRegisterMenuScreens(RegisterMenuScreensEvent event) {
         if (!ModList.get().isLoaded("touhou_little_maid")) {
@@ -36,7 +38,7 @@ public final class StevenModAPIClient {
 
             @Override
             public Component displayName() {
-                return Component.literal("API 主界面");
+                return Component.translatable(KEY_MAIN_SCREEN);
             }
 
             @Override

@@ -10,6 +10,9 @@ import net.neoforged.neoforge.network.PacketDistributor;
 public final class TLMCompatInit {
     private TLMCompatInit() {}
 
+    public static final String KEY_TAB_TITLE = "gui.steven_mod_api.api_tab.title";
+    public static final String KEY_TAB_DESC  = "gui.steven_mod_api.api_tab.description";
+
     public static void init() {
         NeoForge.EVENT_BUS.register(TLMCompatInit.class);
     }
@@ -24,8 +27,8 @@ public final class TLMCompatInit {
 
         event.addButton("steven_mod_api:api_tab",
                 new ApiTabButton(x, y, selected,
-                        Component.literal("API 界面"),
-                        Component.literal("打开 API 界面"),
+                        Component.translatable(KEY_TAB_TITLE),
+                        Component.translatable(KEY_TAB_DESC),
                         b -> {
                             // 已经在 API 页面就不重复打开
                             if (!(event.getGui() instanceof ApiContainerGui)) {
