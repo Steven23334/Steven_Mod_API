@@ -8,9 +8,11 @@ public class StevenModAPI {
     public static final String MOD_ID = "steven_mod_api";
 
     public StevenModAPI(IEventBus modEventBus) {
-        // 将自定义标签页注册到 MOD 事件总线
+        // 注册创造模式标签页
         ModCreativeModeTabs.register(modEventBus);
-        // 如果有物品，也一并注册
+        // 注册物品
         ModItems.register(modEventBus);
+        // 客户端界面注册在 StevenModAPIClient 里通过 @EventBusSubscriber 完成
+        ModMenus.register(modEventBus);
     }
 }
